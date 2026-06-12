@@ -1,5 +1,6 @@
 package fr.calum51.PersonalProductivity.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Setter;
 import org.jspecify.annotations.Nullable;
@@ -29,6 +30,7 @@ public class User implements UserDetails {
 
     @Setter
     @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Setter
